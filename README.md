@@ -5,6 +5,10 @@ Then outputs the frames as .png files into the output folder.
 
 I made this for use with DeepFaceLab, to quickly create a single folder of training images from a bunch of videos in one go.
 
+## Warning ##
+
+This script will extract every single frame from a video at original resolution into .png files, for long videos (20 minutes or more) this can result in HUGE file sizes, please make sure you have enough storage space for this.
+
 ## How to use ##
 
 1. Make sure you have python installed.
