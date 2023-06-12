@@ -13,7 +13,7 @@ This script will extract every single frame from ALL videos in the input folder 
 
 1. Make sure you have python installed.
 
-2. Clone this repo or download as .zip and extract.
+2. Clone this repo or download as .zip from this page or releases and extract. 
 
 3. Place video files into the input folder.
 
