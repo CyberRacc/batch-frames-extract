@@ -2,7 +2,8 @@ import subprocess
 import pkg_resources
 
 REQUIRED_PACKAGES = [
-    'opencv-python'
+    'opencv-python',
+    'tqdm'
 ]
 
 for package in REQUIRED_PACKAGES:
@@ -13,32 +14,37 @@ for package in REQUIRED_PACKAGES:
         print('{} is NOT installed'.format(package))
         subprocess.call(['pip', 'install', package])
 
+# Now that we have made sure that all required packages are installed, we can import them.
 import cv2
 import os
 import glob
+from tqdm import tqdm
 
 def extract_frames(video_path, dir_path):
-    # The video filename without extension
-    video_name = os.path.splitext(os.path.basename(video_path))[0]
+    # The video filename with extension
+    video_name = os.path.basename(video_path)
 
     # Start capturing the feed
     cap = cv2.VideoCapture(video_path)
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     i = 0
 
-    while (cap.isOpened()):
-        # Get the frame
-        ret, frame = cap.read()
-        if ret == False:
-            break
+    with tqdm(total=total_frames, desc=video_name, ncols=80) as pbar:
+        while (cap.isOpened()):
+            # Get the frame
+            ret, frame = cap.read()
+            if ret == False:
+                break
 
-        # Save the results in the directory path
-        # Include the video filename and frame number in the image filename
-        cv2.imwrite(os.path.join(dir_path, f'{video_name}_frame{i}.png'), frame)
-        i += 1
+            # Save the results in the directory path
+            # Include the video filename and frame number in the image filename
+            # Strip the video extension for the output image filename
+            cv2.imwrite(os.path.join(dir_path, f'{os.path.splitext(video_name)[0]}_frame{i}.png'), frame)
+            i += 1
+            pbar.update(1)
 
     cap.release()
     cv2.destroyAllWindows()
-
 
 # Directory containing the videos
 input_dir = "./input"
