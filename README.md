@@ -7,9 +7,13 @@ I made this for use with DeepFaceLab, to quickly create a single folder of train
 
 ## How to use ##
 
-Make sure you have python installed.
+1. Make sure you have python installed.
 
-In terminal, run the following command:
+2. Clone this repo or download as .zip and extract.
+
+3. Place video files into the input folder.
+
+4. In terminal, run the following command:
 
 ```
 python python.py
@@ -32,6 +36,8 @@ Or:
 ```
 pip3 install opencv-python
 ```
+
+5. Find your .png files in the output directory.
 
 ## Notes ##
 
