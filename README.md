@@ -14,3 +14,25 @@ In terminal, run the following command:
 ```
 python python.py
 ```
+
+Or:
+
+```
+python3 python.py
+```
+
+It will check for opencv-python and attempt to install it. You can install it manually by using:
+
+```
+pip install opencv-python
+```
+
+Or:
+
+```
+pip3 install opencv-python
+```
+
+## Notes ##
+
+Please be aware that this script was created by GPT-4, with minimal edits from myself, but I can verify that it works for my purposes.
