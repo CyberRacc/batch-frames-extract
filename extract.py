@@ -26,6 +26,10 @@ def extract_frames(video_path, dir_path):
 
     # Start capturing the feed
     cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        print(f"Could not open video file {video_path}. Please check the file format.")
+        return
+
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     i = 0
 
@@ -61,5 +65,10 @@ video_extensions = ["*.mp4", "*.avi", "*.mkv", "*.mov", "*.flv", "*.wmv"]
 video_paths = [glob.glob(os.path.join(input_dir, ext)) for ext in video_extensions]
 video_paths = [item for sublist in video_paths for item in sublist]
 
+if not video_paths:
+    print("No video files found in the input directory.")
+    exit(1)
+
 for video_path in video_paths:
     extract_frames(video_path, output_dir)
+
