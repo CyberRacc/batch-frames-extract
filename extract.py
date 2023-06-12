@@ -50,8 +50,10 @@ output_dir = "./output"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-# Get a list of all .mp4 files in the input directory
-video_paths = glob.glob(os.path.join(input_dir, "*.mp4"))
+# Get a list of all video files in the input directory
+video_extensions = ["*.mp4", "*.avi", "*.mkv", "*.mov", "*.flv", "*.wmv"]
+video_paths = [glob.glob(os.path.join(input_dir, ext)) for ext in video_extensions]
+video_paths = [item for sublist in video_paths for item in sublist]
 
 for video_path in video_paths:
     extract_frames(video_path, output_dir)
