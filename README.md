@@ -7,7 +7,7 @@ I made this for use with DeepFaceLab, to quickly create a single folder of train
 
 ## Warning ##
 
-This script will extract every single frame from a video at original resolution into .png files, for long videos (20 minutes or more) this can result in HUGE file sizes, please make sure you have enough storage space for this.
+This script will extract every single frame from ALL videos in the input folder at original resolution into .png files, if you have a bunch of 20 minute 1080p videos, you will get a HUGE folder, please make sure you have plenty of storage space before-hand.
 
 ## How to use ##
 
