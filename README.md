@@ -5,6 +5,8 @@ Then outputs the frames as .png files into the output folder.
 
 I made this for use with DeepFaceLab, to quickly create a single folder of training images from a bunch of videos in one go.
 
+### GUI is exerimental, likely won't work! ###
+
 ## How to use ##
 
 1. Make sure you have python installed.
