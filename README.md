@@ -11,4 +11,6 @@ Make sure you have python installed.
 
 In terminal, run the following command:
 
-``python python.py``
+```
+python python.py
+```
