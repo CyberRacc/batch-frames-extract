@@ -16,13 +16,13 @@ I made this for use with DeepFaceLab, to quickly create a single folder of train
 4. In terminal, run the following command:
 
 ```
-python python.py
+python extract.py
 ```
 
 Or:
 
 ```
-python3 python.py
+python3 extract.py
 ```
 
 It will check for opencv-python and attempt to install it. You can install it manually by using:
